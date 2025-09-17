@@ -1,0 +1,618 @@
+* {
+  box-sizing: border-box;
+}
+html {
+  /* 스크롤 이동을 부드럽게 */
+  scroll-behavior: smooth;
+}
+
+/* 영문에만 적용할 폰트 */
+.font-en {
+  font-family: "Open Sans", sans-serif;
+}
+a {
+  /* 밑줄 제거 */
+  text-decoration: none;
+  color: inherit;
+}
+img {
+  /* 이미지가 인라인 요소라서 발생하는 문자 기준선(Baseline) 아래의 공간을 제거하기 위해 */
+  display: block;
+}
+.inner {
+  /* 고정 길이 */
+  /* width: 1200px; */
+  /* 최대값만 제한 = 반응형 */
+  max-width: 1200px;
+  /* 가로 너비를 가진 블록 요소 가운데 정렬 */
+  margin: 0 auto;
+}
+.inner .title{
+  text-align: center;
+  margin-top: 50px;
+  color: #000;
+  font-size: 60px;
+  font-weight: bold;
+}
+
+  /* Header */
+header {
+  background-color: #fff;
+  border-bottom: 1px solid #c8c8c8;
+  box-shadow: 0 2px 8px rgba(204, 204, 204, 0.8);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+header .inner {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+
+.inner .logo img{
+  width: 60px;
+}
+
+header nav ul {
+  display: flex;
+  justify-content: center;
+}
+
+header nav ul li {
+  padding: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  transition: 0.5s;
+}
+header nav ul li:hover {
+  color: #e06d43;
+  text-decoration: underline;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 32px;
+  cursor: pointer;
+}
+
+/* VISUAL */
+.visual {
+  background-image: url('/images/valeriia-miller-Ng5UHsSsR98-unsplash.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
+  text-align: center;
+  position: relative;
+  margin-top: 60px ;
+  overflow: hidden;
+  width: 100%;
+}
+.visual .inner{
+  height: calc(80vh - 60px);
+  max-width: 800px;
+  animation: fadeInUp 1s ease forwards;
+  opacity: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.visual .inner h1{
+  margin: 0 0 20px;
+  line-height: 1.2;
+  color:hsla(0,0%,100%,.75);
+}
+.visual .inner h1 .name{
+  text-align: center;
+  margin-top: 50px;
+  font-size: 60px;
+  font-weight: 900;
+  letter-spacing: 4px;
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+.visual .inner h2 {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0;
+  opacity: 0.85;
+}
+.inner h1::after,
+.inner .title::after{
+  content: "";
+  display: block;
+  height: 5px;
+  width: 100px;
+  background-color: #d3cd9b;
+  border-radius: 5px;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+
+/* About */
+.ABOUT {
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+}
+.ABOUT h2{
+  text-align: center;
+  margin-top: 50px;
+}
+.ABOUT h2::after{
+  content: "";
+  display: block;
+  height: 5px;
+  width: 100px;
+  background-color: #d3cd9b;
+  border-radius: 5px;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+.ABOUT .AboutContainer{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+.ABOUT .AboutItem {
+  flex: 1 1 calc(33.333% - 20px);
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transform: translateY(200px);
+  opacity: 0;
+  transition: 0.8s;
+}
+.ABOUT.show .AboutItem{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ABOUT.show .AboutItem:nth-child(1) {transition-delay: 0.1s;}
+.ABOUT.show .AboutItem:nth-child(2) {transition-delay: 0.2s;}
+.ABOUT.show .AboutItem:nth-child(3) {transition-delay: 0.3s;}
+.ABOUT.show .AboutItem:nth-child(4) {transition-delay: 0.4s;}
+.ABOUT.show .AboutItem:nth-child(5) {transition-delay: 0.5s;}
+.ABOUT.show .AboutItem:nth-child(6) {transition-delay: 0.6s;}
+
+
+.ABOUT .AboutItem .material-symbols-outlined {
+  font-size: 50px;
+}
+.ABOUT .AboutItem .About-text{
+  text-align: center;
+  margin-left: 10px;
+}
+.ABOUT .AboutItem .About-title {
+  font-size: 18px;
+  font-weight: 600;
+}
+.ABOUT .AboutItem h3{
+  margin: 0;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: left;
+}
+.ABOUT .AboutItem .About-text span{
+  display: block;
+  font-size: 14px;
+  color: #555;
+  margin-top: 4px;
+}
+
+/* SKILL */
+
+.SKILL {
+  padding: 60px 20px;
+  background-color: #fff;
+}
+
+.SKILL .SkillContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 20px;
+}
+
+/* 각 스킬 아이템 */
+.SKILL .SkillItem {
+  background: #f5f5f5;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  position: relative;
+}
+
+/* 상단: 아이콘 + 기술명 */
+.skill-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.skill-header span {
+  font-size: 28px;
+  color: #4a90e2;
+}
+
+.skill-header h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+/* 프로그레스 바 */
+.skill-bar {
+  width: 100%;
+  height: 10px;
+  background-color: #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.skill-fill {
+  width: 0%;
+  height: 100%;
+  background-color: #4a90e2;
+  border-radius: 5px;
+  transition: width 2s ease;
+}
+
+.SKILL .SkillItem .percent {
+  position: absolute;
+  right: 15px;
+  bottom: 40px;
+  display: none;
+}
+.SkillItem img {
+  width: 50px;
+}
+.SkillItem.Java img {
+  width: 30px;
+}
+.SkillItem .skillLevel {
+  border-radius: 8px;
+  background-color: #fff;
+  cursor: pointer;
+  position: absolute;
+  left: 150px;
+  bottom: 50px;
+}
+.SkillItem .skillLevel.CSS {
+  left: 130px;
+  bottom: 40px;
+}
+
+.SkillItem .skillLevel.JavaScript {
+  left: 190px;
+  bottom: 40px;
+}
+
+.SkillItem .skillLevel.Java {
+  left: 122px;
+  bottom: 52px;
+}
+
+.SkillItem .skillLevel.C{
+  left: 130px;
+  bottom: 48px;
+}
+/* PROJECT */
+.PROJECT {
+  padding: 80px 20px;
+  background: #f9f9f9;
+  text-align: center;
+}
+.project-container {
+  display: flex;
+  flex-wrap: wrap;              
+  justify-content: center;      
+  gap: 30px;                    
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+.project-item {
+  position: relative;
+  flex: 1 1 calc(33.333% - 30px); 
+  max-width: 350px;               
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  transition: transform 0.5s ease;
+}
+.project-item:hover {
+  transform: translateY(-10px);
+}
+.project-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  padding: 20px;
+}
+.project-item:hover .overlay {
+  opacity: 1;
+}
+.overlay h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.overlay p {
+  font-size: 13px;
+}
+.overlay a {
+  display: inline-block;
+  margin: 5px;
+  padding: 8px 15px;
+  background: #2563eb;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+.overlay a:hover {
+  background: #1e40af;
+}
+/* CONTACT */
+
+.CONTACT {
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+}
+
+.CONTACT .desc {
+  text-align: center;
+  color: #666;
+  margin-bottom: 40px;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.CONTACT .contact-wrapper {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+}
+
+.CONTACT .contact-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.contact-info .info-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 18px;
+  color: #333;
+}
+
+.info-item span {
+  font-size: 28px;
+  color: #4a90e2;
+}
+.info-item img {
+  width: 28px;
+  border-radius: 50%;
+}
+.info-item p:hover a{
+  color: #5099d4;
+  text-decoration: underline;
+}
+
+.contact-form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  resize: none;
+  font-family: inherit;
+}
+
+.contact-form button {
+  padding: 14px;
+  background-color: #4a90e2;
+  color: #fff;
+  font-size: 18px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #357ABD;
+}
+
+/* FOOTER */
+footer {
+  background-color: #000;
+  color: #fff;
+}
+
+footer .copyright {
+  text-align: center;
+  font-weight: 600;
+  line-height: 200px;
+}
+
+#toTop{
+  background-color: #fff;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid black;
+  
+  position: fixed;
+  z-index: 9;
+  right: 30px;
+  bottom: 90px;
+
+  transform: translateX(100px);
+  opacity: 0;
+  transition: 0.6s;
+}
+#toDown {
+  background-color: #fff;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 9;
+  right: 30px;
+  bottom: 20px;
+  cursor: pointer;
+
+  transform: translateX(100px);
+  opacity: 0;
+  transition: 0.6s;
+}
+#toTop a{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+#toTop span {
+  display: block;
+}
+
+#toDown span {
+  cursor: pointer;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 767px) {
+  header .inner {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .menu-toggle {
+    display: block;
+    color: #333;
+  }
+
+  header nav {
+    position: absolute;
+    top: 60px;         
+    left: 0;
+    width: 100%;
+    background: #fff;
+    border-top: 1px solid #ddd;
+    transform: translateY(-200%);
+    transition: transform 0.3s ease;
+  }
+
+  header nav.active {
+    transform: translateY(-5px);
+  }
+
+  header nav ul {
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px 0;
+  }
+
+  header nav ul li {
+    text-align: center;
+    font-size: 18px;
+  }
+  .visual .inner h1 .name {
+    font-size: 40px;               
+  }
+  .visual .inner h2 {
+    font-size: 18px;
+  }
+
+  .ABOUT .AboutContainer {
+    flex-direction: column;        
+    align-items: center;
+  }
+  .ABOUT .AboutItem {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .project-container {
+    flex-direction: column;        
+    align-items: center;
+  }
+  .project-item {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .CONTACT .contact-wrapper {
+    flex-direction: column;        
+    gap: 20px;
+  }
+
+  #toTop {
+    width: 45px;
+    height: 45px;
+    right: 15px;       
+    bottom: 80px;      
+  }
+
+  
+  #toDown {
+    width: 45px;
+    height: 45px;
+    right: 15px;       
+    bottom: 20px;      
+  }
+}
